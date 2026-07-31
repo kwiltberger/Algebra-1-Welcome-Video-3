@@ -320,7 +320,7 @@
 
         .ixl-panel {
             display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
+            grid-template-columns: 0.8fr 1.2fr;
             gap: 24px;
             align-items: stretch;
         }
@@ -329,7 +329,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 280px;
+            min-height: 300px;
             padding: 32px;
             background: var(--navy);
             color: var(--white);
@@ -341,6 +341,81 @@
             display: block;
             font-size: clamp(2.4rem, 6vw, 4.5rem);
             letter-spacing: 0.08em;
+        }
+
+        .mastery-box {
+            margin-top: 24px;
+            padding: 24px;
+            background: var(--light-yellow);
+            border: 4px solid var(--yellow);
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .mastery-number {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--navy);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: bold;
+        }
+
+        .mastery-label {
+            font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+            font-weight: bold;
+        }
+
+        .ixl-steps {
+            margin: 24px 0 0;
+            padding: 0;
+            list-style: none;
+            counter-reset: ixl-step;
+        }
+
+        .ixl-steps li {
+            position: relative;
+            margin: 14px 0;
+            padding: 14px 14px 14px 58px;
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: clamp(1.05rem, 2.2vw, 1.42rem);
+            line-height: 1.4;
+            counter-increment: ixl-step;
+        }
+
+        .ixl-steps li::before {
+            content: counter(ixl-step);
+            position: absolute;
+            top: 50%;
+            left: 14px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-50%);
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .login-check {
+            margin-top: 26px;
+            padding: 24px;
+            background: var(--light-green);
+            border-left: 8px solid var(--green);
+            border-radius: 12px;
+        }
+
+        .login-check h3 {
+            margin-bottom: 10px;
+        }
+
+        .login-check p {
+            margin: 0;
+            font-size: clamp(1.08rem, 2.25vw, 1.5rem);
         }
 
         .feedback-flow {
@@ -512,7 +587,7 @@
 
         @media (max-width: 820px) {
             .stage {
-                min-height: 740px;
+                min-height: 780px;
             }
 
             .slide {
@@ -561,7 +636,7 @@
                 id="slideCounter"
                 aria-live="polite"
             >
-                Slide 1 of 8
+                Slide 1 of 9
             </p>
         </header>
 
@@ -578,8 +653,8 @@
                     <h1>How to Complete a Practice It!</h1>
 
                     <p class="lead">
-                        Apply what you learned, show your reasoning,
-                        and learn from feedback.
+                        Apply what you learned, complete your graded IXL skills,
+                        and demonstrate mastery.
                     </p>
                 </div>
             </article>
@@ -594,20 +669,33 @@
                     <div class="purpose-grid">
                         <div class="purpose-card">
                             <span class="purpose-icon" aria-hidden="true">🧠</span>
+
                             <strong>Apply</strong>
-                            <span>Use the ideas you learned on the Learn It page.</span>
+
+                            <span>
+                                Use the ideas you learned on the Learn It page.
+                            </span>
                         </div>
 
                         <div class="purpose-card">
                             <span class="purpose-icon" aria-hidden="true">✏️</span>
+
                             <strong>Show Work</strong>
-                            <span>Record the steps and reasoning that lead to your answer.</span>
+
+                            <span>
+                                Record the steps and reasoning that lead to your answer.
+                            </span>
                         </div>
 
                         <div class="purpose-card">
                             <span class="purpose-icon" aria-hidden="true">📈</span>
-                            <strong>Improve</strong>
-                            <span>Use feedback to correct mistakes and strengthen understanding.</span>
+
+                            <strong>Reach Mastery</strong>
+
+                            <span>
+                                Complete every graded IXL skill with a SmartScore
+                                of 80 or higher.
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -629,6 +717,7 @@
                         <div class="two-column">
                             <div class="support-card yellow">
                                 <h3>Check the Directions</h3>
+
                                 <p>
                                     Notice how many problems to complete and
                                     whether written work must be submitted.
@@ -637,6 +726,7 @@
 
                             <div class="support-card blue">
                                 <h3>Review Your Notes</h3>
+
                                 <p>
                                     Return to the Learn It page when you need
                                     a formula, example, or reminder.
@@ -669,7 +759,7 @@
             <!-- Slide 5 -->
             <article class="slide" data-slide="4">
                 <div class="slide-content">
-                    <p class="eyebrow">IXL Practice</p>
+                    <p class="eyebrow">Required Graded Practice</p>
 
                     <div class="ixl-panel">
                         <div class="ixl-badge">
@@ -679,14 +769,23 @@
                         <div class="lesson-card">
                             <div class="step-number">3</div>
 
-                            <h2 class="lesson-title">Open IXL Through Canvas</h2>
+                            <h2 class="lesson-title">
+                                Complete Every IXL Link
+                            </h2>
 
                             <p class="lesson-description">
-                                Assigned IXL skills usually appear as separate
-                                activities in the weekly module. Open each one
-                                through Canvas and work toward the goal listed
-                                by your teacher.
+                                Every Practice It! assignment includes graded IXL
+                                links. Each assigned skill must be completed to
+                                mastery.
                             </p>
+
+                            <div class="mastery-box">
+                                <span class="mastery-number">80+</span>
+
+                                <span class="mastery-label">
+                                    Required SmartScore for Mastery
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -695,30 +794,35 @@
             <!-- Slide 6 -->
             <article class="slide" data-slide="5">
                 <div class="slide-content">
-                    <p class="eyebrow">Use Feedback Productively</p>
+                    <p class="eyebrow">Opening Your Assigned Skills</p>
 
-                    <h2>Do not guess repeatedly just to finish.</h2>
+                    <h2>Use the IXL links at the bottom of the page.</h2>
 
-                    <div class="feedback-flow">
-                        <div class="feedback-step">
-                            <strong>1. Read</strong>
-                            <span>Study the feedback after an incorrect answer.</span>
-                        </div>
+                    <ol class="ixl-steps">
+                        <li>
+                            Scroll to the bottom of the Practice It! page.
+                        </li>
 
-                        <div class="feedback-step">
-                            <strong>2. Correct</strong>
-                            <span>Identify the step or idea that caused the mistake.</span>
-                        </div>
+                        <li>
+                            Click each assigned IXL skill link.
+                        </li>
 
-                        <div class="feedback-step">
-                            <strong>3. Retry</strong>
-                            <span>Use the correction on the next problem.</span>
-                        </div>
-                    </div>
+                        <li>
+                            Confirm that the link opens your logged-in PPOA IXL account.
+                        </li>
 
-                    <div class="warning-box">
-                        A lower score is not a reason to rush. Slow down,
-                        review your notes, and use the feedback to improve.
+                        <li>
+                            Complete the skill until your SmartScore is 80 or higher.
+                        </li>
+                    </ol>
+
+                    <div class="login-check">
+                        <h3>Before You Begin the Skill</h3>
+
+                        <p>
+                            Make sure you see your PPOA IXL account. Do not complete
+                            the skill while signed out or using a personal IXL account.
+                        </p>
                     </div>
                 </div>
             </article>
@@ -726,40 +830,89 @@
             <!-- Slide 7 -->
             <article class="slide" data-slide="6">
                 <div class="slide-content">
-                    <p class="eyebrow">Before Submitting</p>
+                    <p class="eyebrow">Use IXL Feedback Productively</p>
 
-                    <h2>Check that the assignment is complete.</h2>
+                    <h2>Do not guess repeatedly just to reach 80.</h2>
 
-                    <div class="submission-grid">
-                        <div class="submission-card">
-                            <strong>Every Problem</strong>
-                            <span>Make sure no required question was skipped.</span>
+                    <div class="feedback-flow">
+                        <div class="feedback-step">
+                            <strong>1. Read</strong>
+
+                            <span>
+                                Study the explanation after an incorrect answer.
+                            </span>
                         </div>
 
-                        <div class="submission-card">
-                            <strong>Required Work</strong>
-                            <span>Include calculations, explanations, or uploaded pages.</span>
+                        <div class="feedback-step">
+                            <strong>2. Correct</strong>
+
+                            <span>
+                                Identify the step or idea that caused the mistake.
+                            </span>
                         </div>
 
-                        <div class="submission-card">
-                            <strong>Correct Submission</strong>
-                            <span>Confirm the file or response was submitted successfully.</span>
+                        <div class="feedback-step">
+                            <strong>3. Retry</strong>
+
+                            <span>
+                                Apply the correction to the next problem.
+                            </span>
                         </div>
+                    </div>
+
+                    <div class="warning-box">
+                        Your goal is mastery, not fast guessing. Slow down, use the
+                        feedback, and return to your Learn It notes when needed.
                     </div>
                 </div>
             </article>
 
             <!-- Slide 8 -->
             <article class="slide" data-slide="7">
+                <div class="slide-content">
+                    <p class="eyebrow">Before Finishing</p>
+
+                    <h2>Check that every requirement is complete.</h2>
+
+                    <div class="submission-grid">
+                        <div class="submission-card">
+                            <strong>Practice Page</strong>
+
+                            <span>
+                                Complete every required problem and include your work.
+                            </span>
+                        </div>
+
+                        <div class="submission-card">
+                            <strong>Every IXL Skill</strong>
+
+                            <span>
+                                Confirm that each assigned link has a SmartScore of 80 or higher.
+                            </span>
+                        </div>
+
+                        <div class="submission-card">
+                            <strong>PPOA Account</strong>
+
+                            <span>
+                                Make sure your IXL work was completed while logged in correctly.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Slide 9 -->
+            <article class="slide" data-slide="8">
                 <div class="slide-content center">
                     <p class="eyebrow">Successful Practice</p>
 
-                    <h2>Practice carefully and learn from mistakes.</h2>
+                    <h2>Complete the assignment and reach IXL mastery.</h2>
 
                     <div class="closing-grid">
                         <div class="closing-step">Read Directions</div>
-                        <div class="closing-step">Show Your Work</div>
-                        <div class="closing-step">Check Before Submitting</div>
+                        <div class="closing-step">Use Your PPOA IXL Account</div>
+                        <div class="closing-step">Earn a SmartScore of 80+</div>
                     </div>
 
                     <p class="lead" style="margin-top: 34px;">
@@ -863,7 +1016,7 @@
             {
                 narration:
                     "The Practice It assignment is where you apply what you learned and build confidence with the new skill. " +
-                    "Your goal is to practice carefully, show your reasoning, and improve by using feedback."
+                    "Every Practice It assignment also includes graded I X L skills that must be completed to mastery."
             },
             {
                 narration:
@@ -879,25 +1032,32 @@
             },
             {
                 narration:
-                    "Some Practice It assignments include separate I X L activities in the weekly Canvas module. " +
-                    "Open each assigned skill through Canvas, and work toward the SmartScore or goal listed by your teacher."
+                    "Every Practice It assignment includes graded I X L links. " +
+                    "You must complete every assigned I X L skill to mastery, which means earning a SmartScore of 80 or higher."
             },
             {
                 narration:
-                    "When you make a mistake, read the feedback instead of guessing repeatedly. " +
+                    "The assigned I X L links are listed at the bottom of the Practice It page. " +
+                    "Click each link and make sure it opens your logged-in P P O A I X L account before beginning. " +
+                    "Do not complete the skill while signed out or while using a personal I X L account. " +
+                    "Continue working until your SmartScore is at least 80."
+            },
+            {
+                narration:
+                    "When you make a mistake in I X L, read the feedback instead of guessing repeatedly. " +
                     "Identify the step or idea that caused the error, correct your thinking, " +
-                    "and use that correction on the next problem. Slowing down will help you improve more quickly."
+                    "and apply the correction to the next problem. Your goal is mastery, not fast guessing."
             },
             {
                 narration:
-                    "Before submitting, make sure every required problem is complete. " +
-                    "Include any calculations, explanations, photographs, or files requested by the assignment. " +
-                    "Then confirm that Canvas shows your submission as successfully turned in."
+                    "Before finishing the Practice It assignment, make sure every required problem is complete, " +
+                    "every assigned I X L skill has a SmartScore of 80 or higher, " +
+                    "and all I X L work was completed while logged in to your P P O A account."
             },
             {
                 narration:
                     "Successful practice means reading the directions, showing your work, " +
-                    "learning from feedback, and checking the assignment before submitting. " +
+                    "using your correct P P O A I X L account, and earning a SmartScore of at least 80 on every assigned skill. " +
                     "Ask for help whenever a skill is still unclear."
             }
         ];
@@ -948,10 +1108,6 @@
             "speechSynthesis" in window &&
             "SpeechSynthesisUtterance" in window;
 
-        /*
-         * Students do not see or control the voice selection.
-         * The page automatically chooses the first preferred voice available.
-         */
         const preferredVoiceNames = [
             "Google US English",
             "Microsoft Aria Online (Natural) - English (United States)",
@@ -969,8 +1125,9 @@
         ];
 
         function displayCaption(text) {
-            captionText.textContent =
-                text.replaceAll("I X L", "IXL");
+            captionText.textContent = text
+                .replaceAll("I X L", "IXL")
+                .replaceAll("P P O A", "PPOA");
         }
 
         function showSlide(index) {
